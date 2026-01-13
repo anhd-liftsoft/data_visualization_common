@@ -139,8 +139,6 @@ Advanced table rendering with filtering capabilities.
 - `range`: Numeric range slider
 - `daterange`: Date range picker
 - `timerange`: Time range picker (supports cross-midnight ranges)
-- `text`: Text search filter
-- `checkbox`: Boolean filter
 
 **Filter Configuration Example:**
 ```python
@@ -232,50 +230,6 @@ data_visualization/
 
 See [example.py](example.py) for complete working examples.
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Add docstrings and type hints to all new code
-4. Ensure code follows PEP 8 style guidelines
-5. Test your changes thoroughly
-6. Commit your changes (`git commit -m 'Add amazing feature'`)
-7. Push to the branch (`git push origin feature/amazing-feature`)
-8. Open a Pull Request
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🐛 Known Issues
-
-- `data_processor.py` is currently a placeholder and needs implementation
-- Range slider in charts uses hardcoded `xaxis3` reference
-- Export path is hardcoded in the default button
-
-## 🗺️ Roadmap
-
-- [ ] Implement data_processor.py with common data transformations
-- [ ] Add more chart types (scatter, heatmap, etc.)
-- [ ] Support for additional export formats (Excel, JSON, CSV)
-- [ ] Add unit tests
-- [ ] Add theme customization
-- [ ] Improve error handling and validation
-- [ ] Add interactive chart builder UI
-
-## 💡 Tips
-
-- Use `scope` parameter in tables to avoid session_state conflicts
-- Leverage `@st.fragment` for better performance with large datasets
-- For time filters crossing midnight, use `timerange` type
-- Export figures require `kaleido` package installed
-
-## 📞 Support
-
-For issues, questions, or contributions, please open an issue on the GitHub repository.
-
----
-
-**Made with ❤️ for data visualization enthusiasts**

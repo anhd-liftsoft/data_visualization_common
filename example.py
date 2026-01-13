@@ -1,5 +1,6 @@
-from src.chart import Chart, RowChart
 import pandas as pd
+
+from src.chart import Chart, RowChart
 from src.streamlit_app import DataVisualizationApp
 
 
@@ -35,16 +36,18 @@ chart_figure = chart.create_chart()
 app.add_figure(chart_figure)
 
 # Add table with filters
+filter_configs = [
+    {"column": "open_time", "type": "timerange", "label": "Open Time Range"},
+    {"column": "open", "type": "range", "label": "Open Price Range"},
+    {"column": "high", "type": "range", "label": "High Price Range"},
+    {"column": "low", "type": "range", "label": "Low Price Range"},
+    {"column": "close", "type": "range", "label": "Close Price Range"},
+    {"column": "volume", "type": "range", "label": "Volume Range"},
+]
+
 app.add_table(
     df,
-    filters=[
-        {"column": "open_time", "type": "timerange", "label": "Open Time Range"},
-        {"column": "open", "type": "range", "label": "Open Price Range"},
-        {"column": "high", "type": "range", "label": "High Price Range"},
-        {"column": "low", "type": "range", "label": "Low Price Range"},
-        {"column": "close", "type": "range", "label": "Close Price Range"},
-        {"column": "volume", "type": "range", "label": "Volume Range"},
-    ],
+    filters=filter_configs,
     title="BTC Market Data Table"
 )
 
